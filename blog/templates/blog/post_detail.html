@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ post.title }}
+        <img style="width: 150px; height: 100px; padding-right: 200px; padding-bottom: 25px;" align="right" src="{% static 'images/ex15.JPG' %}"/>
+        </h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
